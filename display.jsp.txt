@@ -1,0 +1,59 @@
+<%@ page import="java.sql.*" %>
+<%@ include file="Display.html" %>
+<%
+ String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String phone= request.getParameter("phone");
+        String type=request.getParameter("blood-type");
+        
+	Connection conn = null;
+    PreparedStatement statement= null;
+        // Set the content type of the response
+        response.setContentType("text/html");
+
+        // Get a PrintWriter object to write the HTML response
+        PrintWriter out = response.getWriter();
+
+       try {
+            // Make a database connection
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+		String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:XE";
+    String dbUser = "system";
+    String dbPassword ="rooter";
+           
+            conn = DriverManager.getConnection(jdbcUrl,dbUser,dbPassword);
+
+            String query = "SELECT * FROM store";
+         		statement = conn.prepareStatement(query);
+
+            // Execute the query and get the ResultSet
+            ResultSet resultSet = statement.executeQuery();
+
+            // Generate the table rows dynamically
+            while (resultSet.next()) {
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                String phone = resultSet.getString("phone");
+                String type =resultSet.getString("type");
+
+                // Generate a table row with the retrieved data
+                out.println("<tr>");
+                out.println("<td>" + name + "</td>");
+                out.println("<td>" + email + "</td>");
+                out.println("<td>" + phone + "</td>");
+                out.println("<td>" + type + "</td>");
+                out.println("</tr>");
+            }
+
+            // Close the database connection and resources
+            resultSet.close();
+            statement.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // Close the PrintWriter
+        out.close();
+    }
+}

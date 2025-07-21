@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    
+    <title>Document</title>
+   
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Mulish&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="slidercss.css" type="text/css">
+    <link rel="stylesheet" href="stylecss.css" type="text/css">
+</head>
+
+<body>
+  
+    <section id="header">
+        <div class="container flex">
+            <img src="blood1.png">
+            
+        </div>
+    </section>
+
+    <section id="nav">
+        <div class="container flex">
+            <div class="flex" >
+                <a href="Home.html" class="link">Home</a>
+                <a href="bloodneeds.jsp" class="link">Blood Needs</a>
+                <a href="types.html" class="link">Acceptable Types</a>
+                <a href="Nearby.html" class="link">Nearby Blood-banks</a>
+                
+		        <a href="admin_login.html" class="btn">Admin LOGIN</a>
+                <a href="login.html" class="btn">Donor LOGIN</a>
+                <a href="signup.html" class="btn">Signup</a>
+            </div>        
+        </div>
+    </section>
+
+    <section class="slider">
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <div class="numbertext">1 / 3</div>
+                <img src="blood10.png"  class="slide-size">
+
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 3</div>
+                <img src="blood9.png"   class="slide-size">
+
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 3</div>
+                <img src="blood12.png"   class="slide-size">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+    
+   
+    
+    
+    <div>
+      <div class="how-help">
+        <h1 class="how-help-title">How You Can Help</h1>
+        <div class="how-help-sections flex">
+            <section class="help-section">
+                <img src="help1.png" class="help-img" />
+                <h2><a href="#">Blood Donor Basics</a></h2>
+                <p>
+                    Your health is important to us, and we want to help you maintain it.
+                </p>
+            </section>
+            <section class="help-section">
+                <img src="help2.png" class="help-img" />
+                <h2><a href="#">Hosting A Blood Drive</a></h2>
+                <p>
+                    Your help as our community partner is essential to the blood supply.
+                </p>
+            </section>
+            <section class="help-section">
+                <img src="help3.png" class="help-img" />
+                <h2><a href="#">Donation Methods</a></h2>
+                <p>
+                    Let your blood type lead the way to donate your powerful lifesaving gift.
+                </p>
+            </section>
+            <section class="help-section">
+                <img src="help4.png" class="help-img" />
+                <h2><a href="#">Share Your Story</a></h2>
+                <p>
+                    Help your community understand the impact blood donation has.
+                </p>
+            </section>
+        </div>
+    </div>
+    <section id="footer">
+        <div class="container flex">
+            <div id="subscribe">
+                <h1>Subscibe Now</h1>
+                <div class="flex">
+                    <input type="text" placeholder="Enter your E-mail" class="email" />
+                    <a href="#" class="subscribe-btn"> Subscribe</a>
+                </div>
+               
+            </div>
+            <div >
+                <h1>Contact with us Now</h1>
+                
+               
+                <div class="social-icons flex">
+                    <a href="https://twitter.com/" class="contact-link"><i class="fa fa-twitter"
+                            aria-hidden="true"></i></a>
+                    <a href="https://facebook.com/" class="contact-link"><i class="fa fa-facebook-square"
+                            aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com/" class="contact-link"> <i class="fa fa-linkedin-square"
+                            aria-hidden="true"></i></a>
+                    <a href="https://gmail.com/" class="contact-link"> <i class="fa fa-google"
+                            aria-hidden="true"></i></a>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+   <script>
+        var slideIndex = 0;
+        showSlides();
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 3000);
+        }
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Blood - Blood Bank Management</title>
+    <link rel="stylesheet" href="Donate.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Mulish&display=swap" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+   
+    <link rel="stylesheet" href="stylecss.css" type="text/css">
+</head>
+
+<body>
+   
+    <section id="header">
+        <div class="container flex">
+            <img src="blood1.png">
+            
+        </div>
+    </section>
+    <main>
+        <div class="container">
+            <h2>Update List</h2>
+            <br>
+            <form action="update.jsp">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="blood-type">Blood Type:</label>
+                <select id="blood-type" name="blood-type" required>
+                    <option value="">-- Select Blood Type --</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+
+                <input type="submit" class="login-btn" value="Submit">
+            </form>
+        </div>
+    </main>
